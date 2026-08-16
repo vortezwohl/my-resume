@@ -58,6 +58,9 @@
         }
 
         .header {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 19mm;
+            column-gap: 6mm;
             border-bottom: 1.2px solid var(--line);
             padding-bottom: 4mm;
             margin-bottom: 4mm;
@@ -79,6 +82,7 @@
         }
 
         .name-row {
+            grid-column: 1;
             grid-template-columns: 1fr auto;
             align-items: end;
             gap: 8mm;
@@ -113,10 +117,23 @@
         }
 
         .header-meta {
+            grid-column: 1;
             grid-template-columns: 1.5fr 1fr;
             gap: 2mm 8mm;
             margin-top: 2.4mm;
             align-items: start;
+        }
+
+        .profile-photo {
+            grid-column: 2;
+            grid-row: 1 / span 2;
+            align-self: start;
+            width: 19mm;
+            height: 25mm;
+            border: 0.6px solid var(--soft-line);
+            border-radius: 1mm;
+            object-fit: cover;
+            object-position: center 18%;
         }
 
         .contact-grid {
@@ -418,6 +435,7 @@
                         <span><span class="label">博客</span><a href="https://vortezwohl.github.io/">vortezwohl.github.io</a></span>
                     </div>
                 </div>
+                <img class="profile-photo" src="asset/profile.jpeg" alt="吴子豪个人照片">
             </header>
 
             <section class="section">
