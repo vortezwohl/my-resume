@@ -472,7 +472,7 @@
                     <div>熟练使用 PyTorch、SpaCy、vLLM、LLaMA-Factory 等模型训练与部署工具链。</div>
                     <div>深入理解 Transformer 原理及变体，持续跟踪 NLP / Deep Learning / Autonomous Agent 前沿。</div>
                     <div>具备长文本建模、文本分类评分、RAG、可控生成、向量数据库与智能体系统开发经验。</div>
-                    <div>能够快速阅读英文文献并落地业务，兼具研究表达、论文撰写与开源维护能力。</div>
+                    <div>能够快速阅读英文文献并落地业务，兼具技术表达、文档撰写与开源维护能力。</div>
                     <div>有业务量化意识，关注准确率、修改率、覆盖规模、上线成效与可解释性。</div>
                 </div>
             </section>
@@ -599,39 +599,26 @@
                 <article class="project">
                     <div class="project-head">
                         <div>
-                            <div class="project-name"><a href="https://github.com/vortezwohl/OpenBuffett">OpenBuffett</a>：本地 AI 投研工作台</div>
+                            <div class="project-name"><a href="https://github.com/vortezwohl/OpenBuffett">OpenBuffett</a>：本地 AI 投研个人助手</div>
                             <div class="project-role">独立开发者｜最初提出：2026.07｜2026 Flow AI Fintech 24 小时黑客松项目</div>
                         </div>
                         <div class="exp-time">EasyHarness / Textual / FMP</div>
                     </div>
                     <div class="project-body">
-                        一个面向美股估值研究、IPO / 打新分析与市场数据辅助的本地 AI 投研工作台，解决散户“有信息但难形成机构化研究闭环”的问题；它不是泛财经聊天壳，而是把 <span class="emph">ticker gate</span>、证据分级、一级披露优先、可比公司深度对照、多周期判断和报告输出内建为研究纪律。技术上采用 <span class="emph">Textual TUI + EasyHarness Agent Runtime + FMP 研究工具层</span> 的分层结构，已形成从数据拉取、研究审计到 Markdown 研报沉淀的完整闭环。
+                        一个面向美股估值研究、IPO / 打新分析与市场数据辅助的本地 AI 投研个人助手，帮助个人投资者以机构化研究纪律完成公司研究、可比公司深度对照与估值判断；它不是泛财经聊天壳，而是把 <span class="emph">ticker gate</span>、证据分级、一级披露优先、多周期判断和审计式报告边界内建为研究流程。技术上采用 <span class="emph">Textual TUI + EasyHarness Agent Runtime + FMP 研究工具层</span> 的分层结构，已形成从数据拉取、研究审计到 Markdown 研报沉淀的完整闭环。
                     </div>
                 </article>
 
                 <article class="project">
                     <div class="project-head">
                         <div>
-                            <div class="project-name"><a href="https://github.com/vortezwohl/EasyHarness">EasyHarness</a>：极简 Agent Loop SDK</div>
+                            <div class="project-name"><a href="https://github.com/vortezwohl/EasyHarness">EasyHarness</a>：严格工具契约与可观测事件的 Agent SDK</div>
                             <div class="project-role">独立开发者｜最初提出：2026.07｜Local Agent Runtime / Strict Tool Contracts</div>
                         </div>
                         <div class="exp-time">Strands / LiteLLM / FileGlide</div>
                     </div>
                     <div class="project-body">
-                        一个面向本地 Agent 自研的超轻量 Python harness 框架，将公开 surface 强约束为 <span class="emph">Agent / ModelConfig / AgentEvent / ToolOutput / tool</span> 五个核心对象，并提供 thinking / tool / assistant / compress / system 统一流式事件、默认 <span class="emph">7</span> 个 FileGlide 文件工具，以及在 <span class="emph">70%</span> context window 阈值触发的主动压缩策略，解决传统 Agent 框架过重、工具协议松散与运行时黑盒化的问题。
-                    </div>
-                </article>
-
-                <article class="project">
-                    <div class="project-head">
-                        <div>
-                            <div class="project-name"><a href="https://github.com/vortezwohl/Bhakti">Bhakti</a>：轻量级向量数据库与语义检索系统</div>
-                            <div class="project-role">独立开发者 / 作者｜最初提出：2024.08｜PyPI / 技术报告｜Github 35+ Star</div>
-                        </div>
-                        <div class="exp-time">AsyncIO / DSL / Vector Search</div>
-                    </div>
-                    <div class="project-body">
-                        一个面向中小规模语义检索的轻量向量数据库，我借此系统性深入了向量数据库在相似度度量、文档条件预过滤、异步服务化接口与记忆检索中的工程实现；其支持多 similarity metric、基于文档条件的 <span class="emph">DSL 预过滤</span>、可移植数据文件，以及 <span class="emph">asyncio NIO server + reactive client</span> 架构，可作为 RAG / memory retrieval 系统中的轻量向量存储与检索底座。
+                        一个面向本地 Agent 自研的 Python SDK，以严格工具契约、可观测流式事件与受限文件能力构建可控的单 Agent 运行时；公开 API 聚焦 <span class="emph">Agent / ModelConfig / AgentEvent / ToolOutput / tool</span>，<span class="emph">@tool</span> 强制用途、调用时机、参数、返回语义和常见失败一致，<span class="emph">stream()</span> 统一输出 thinking / tool / assistant / compress / system 事件，FileGlide 工具集将文件操作限定于显式根目录。默认完整保留会话历史，调用方可按需显式接入摘要或滑动窗口管理，避免框架隐式改变上下文。
                     </div>
                 </article>
 
