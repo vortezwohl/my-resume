@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陈婉婷｜中文简历</title>
+    <style>
+        @page { size: A4; margin: 0; }
+
+        :root {
+            --ink: #111111;
+            --muted: #555555;
+            --line: #222222;
+            --soft-line: #c9c9c9;
+            --paper: #ffffff;
+            --screen: #ececec;
+        }
+
+        * { box-sizing: border-box; }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--screen);
+            color: var(--ink);
+            font-family: "Times New Roman", "Noto Serif SC", "Source Han Serif SC", "Songti SC", "SimSun", serif;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        body { padding: 10mm 0; }
+
+        .page {
+            position: relative;
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto 8mm;
+            padding: 10mm 12mm 11mm;
+            background: var(--paper);
+            box-shadow: 0 0 0 0.35mm rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .page:last-child { margin-bottom: 0; }
+
+        .page:nth-of-type(2) { padding: 8.5mm 10.8mm 9.2mm; }
+
+        .header {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+            border-bottom: 1.2px solid var(--line);
+            padding-bottom: 4mm;
+            margin-bottom: 4mm;
+        }
+
+        .name-row,
+        .header-meta,
+        .contact-grid,
+        .section-head,
+        .edu-row,
+        .exp-head,
+        .project-head,
+        .skills-grid { display: grid; }
+
+        .name-row {
+            grid-template-columns: 1fr auto;
+            align-items: end;
+            gap: 8mm;
+        }
+
+        .name {
+            font-size: 22pt;
+            line-height: 1;
+            letter-spacing: 0.6pt;
+            font-weight: 700;
+        }
+
+        .role {
+            font-size: 10pt;
+            letter-spacing: 0.9pt;
+            color: var(--muted);
+            text-align: right;
+        }
+
+        .header-meta {
+            grid-template-columns: 1fr;
+            margin-top: 3mm;
+            align-items: start;
+        }
+
+        .contact-grid {
+            grid-template-columns: repeat(3, auto);
+            justify-content: start;
+            gap: 2mm 6mm;
+            font-size: 8.8pt;
+        }
+
+        .contact-grid span { white-space: nowrap; }
+
+        .label { color: var(--muted); margin-right: 1.2mm; }
+
+        .section { margin-top: 4mm; }
+
+        .page:nth-of-type(2) .section { margin-top: 3.2mm; }
+
+        .section-head {
+            grid-template-columns: auto 1fr;
+            align-items: center;
+            gap: 3mm;
+            margin-bottom: 2.6mm;
+        }
+
+        .page:nth-of-type(2) .section-head { margin-bottom: 2.1mm; }
+
+        .section-title {
+            font-size: 10pt;
+            font-weight: 700;
+            letter-spacing: 1.1pt;
+        }
+
+        .section-rule {
+            border-top: 0.8px solid var(--line);
+            transform: translateY(0.4mm);
+        }
+
+        .edu-row,
+        .exp-head,
+        .project-head {
+            grid-template-columns: 1fr auto;
+            gap: 6mm;
+        }
+
+        .edu-school,
+        .exp-company,
+        .project-name {
+            font-size: 10pt;
+            font-weight: 700;
+        }
+
+        .edu-major,
+        .exp-title,
+        .project-role {
+            font-size: 8.8pt;
+            color: var(--muted);
+            margin-top: 0.8mm;
+        }
+
+        .edu-time,
+        .exp-time {
+            font-size: 8.6pt;
+            color: var(--muted);
+            white-space: nowrap;
+            text-align: right;
+        }
+
+        .edu-body,
+        .exp-body,
+        .project-body {
+            margin-top: 1.4mm;
+            font-size: 8.58pt;
+            line-height: 1.36;
+        }
+
+        .compact { margin: 1mm 0 0; }
+
+        .inline-note {
+            margin-top: 1.1mm;
+            font-size: 8.6pt;
+            color: var(--muted);
+        }
+
+        ul { margin: 1.4mm 0 0 4mm; padding: 0; }
+
+        li { margin: 0 0 0.7mm; }
+
+        .skills-grid {
+            grid-template-columns: 1fr;
+            gap: 1.2mm;
+            font-size: 8.75pt;
+            line-height: 1.4;
+        }
+
+        .skills-grid div::before,
+        .cert-grid div::before { content: "· "; color: var(--muted); }
+
+        .emph { font-weight: 700; }
+
+        .project { margin-bottom: 3.3mm; }
+
+        .summary-box {
+            border-top: 0.7px solid var(--soft-line);
+            border-bottom: 0.7px solid var(--soft-line);
+            padding: 1.6mm 0;
+            font-size: 8.6pt;
+            line-height: 1.34;
+        }
+
+        .page:nth-of-type(2) .summary-box {
+            padding: 0.72mm 0;
+            font-size: 7.95pt;
+            line-height: 1.16;
+        }
+
+        .page:nth-of-type(2) .project {
+            margin-bottom: 2.2mm;
+        }
+
+        .page:nth-of-type(2) .project-head {
+            grid-template-columns: 1fr;
+            gap: 0.45mm;
+        }
+
+        .page:nth-of-type(2) .project-name {
+            font-size: 9.18pt;
+        }
+
+        .page:nth-of-type(2) .project-role {
+            font-size: 8.12pt;
+            margin-top: 0.35mm;
+        }
+
+        .page:nth-of-type(2) .project-body {
+            margin-top: 0.68mm;
+            font-size: 8pt;
+            line-height: 1.16;
+        }
+
+        .footer {
+            position: absolute;
+            left: 12mm;
+            right: 12mm;
+            bottom: 5mm;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            font-size: 7.9pt;
+            color: var(--muted);
+            border-top: 0.6px solid var(--soft-line);
+            padding-top: 1.5mm;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        .tight-list li { margin-bottom: 0.45mm; }
+
+        @media print {
+            body { background: #ffffff; padding: 0; }
+            .page { margin: 0; box-shadow: none; page-break-after: always; }
+            .page:last-child { page-break-after: auto; }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="page">
+            <header class="header">
+                <div class="name-row">
+                    <div class="name">陈婉婷</div>
+                    <div class="role">应聘岗位：AI开发（Python方向）</div>
+                </div>
+                <div class="header-meta">
+                    <div class="contact-grid">
+                        <span><span class="label">所在地</span>福建省莆田市</span>
+                        <span><span class="label">电话</span>13799699143</span>
+                        <span><span class="label">邮箱</span><a href="mailto:1473112376@qq.com">1473112376@qq.com</a></span>
+                    </div>
+                </div>
+            </header>
+
+            <section class="section">
+                <div class="section-head">
+                    <div class="section-title">校园经历</div>
+                    <div class="section-rule"></div>
+                </div>
+                <div class="edu-row">
+                    <div>
+                        <div class="edu-school">福州理工学院</div>
+                        <div class="edu-major">智能科学与技术｜全日制本科</div>
+                    </div>
+                    <div class="edu-time">2021.09-2025.07</div>
+                </div>
+                <div class="edu-body">
+                    <ul class="tight-list">
+                        <li>证书：全国大学英语四级考试合格证书（CET-4）</li>
+                        <li>主修课程：Python、Linux、深度学习、智能语音处理、智能图像处理、数据库原理、计算机网络、数据挖掘等</li>
+                        <li>荣誉/奖项：</li>
+                        <li>第十八届“挑战杯”大学生课外学术科技作品竞赛“黑科技”专项赛国赛三等奖</li>
+                        <li>第七届全国大学生现代通信网络部署与优化设计大赛国赛二等奖</li>
+                        <li>第二十五届中国机器人及人工智能大赛福建赛区三等奖</li>
+                        <li>2021-2022 国家励志奖学金、2022-2023 国家励志奖学金、2024-2025国家奖学金</li>
+                        <li>福州理工学院优秀毕业生、优秀学生干部、优秀共青团员、三好学生等</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-head">
+                    <div class="section-title">技术掌握情况</div>
+                    <div class="section-rule"></div>
+                </div>
+                <div class="skills-grid">
+                    <div>Python编程：熟练掌握Python编程语言，擅长基于Flask/FastAPI构建高并发RESTful API，熟悉异步编程（asyncio）、性能优化及API安全防护。</div>
+                    <div>Agent开发：掌握智能体(Agent)系统开发，熟悉LLM智能体的架构设计、任务编排与性能优化，能实现复杂业务逻辑的Agent工作流。</div>
+                    <div>Linux编程：熟悉Linux系统管理及Shell脚本开发能力，熟练使用awk/sed等文本处理工具编写自动化脚本。</div>
+                    <div>前端开发：具有PyQT5跨平台桌面应用完整开发经验，熟悉信号槽机制；完整的微信小程序全栈项目经验，熟悉小程序生命周期管理。</div>
+                    <div>机器学习：了解模型从数据收集、数据清洗、数据预处理、数据分析、模型选择和建立、模型训练、模型评估以及模型优化全流程。</div>
+                    <div>数据库存储：熟练掌握MySQL数据库基本操作，包括增删改查，多表联査，内外连接等，熟练使用Navicat连接数据库完成日常开发工作。</div>
+                    <div>工具: 熟悉Git等项目管理工具的使用，了解Git版本控制，团队协作开发等相关知识。</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-head">
+                    <div class="section-title">项目经历</div>
+                    <div class="section-rule"></div>
+                </div>
+                <article class="project">
+                    <div class="project-head">
+                        <div>
+                            <div class="project-name">毕业设计：《基于大模型的助手智能体小程序的设计与实现》（待测上线、优秀毕业设计）</div>
+                            <div class="project-role">项目架构：Coze智能体+微信小程序+Flask+MySQL+阿里云服务器</div>
+                        </div>
+                    </div>
+                    <div class="project-body">项目描述：前端基于微信小程序平台构建交互界面，后端实现词汇识别与学习数据管理。系统启动后触发微信身份认证，确保用户信息授权合规。用户输入单词后，系统接入金山词典API获取词义、音标、例句等内容，通过双面卡片、音频播放与状态标记实现沉浸式学习体验。同时，系统支持语音与文本AI交互，所有学习数据实时加密同步至数据库，实现个性化学习与掌握情况动态更新。</div>
+                </article>
+                <article class="project">
+                    <div class="project-head">
+                        <div>
+                            <div class="project-name">课设项目：《基于YOLOv8的车牌检测识别信息管理系统的设计与实现》</div>
+                            <div class="project-role">项目架构：Pytorch+YOLOV8+PaddleOCR+PyQt5</div>
+                        </div>
+                    </div>
+                    <div class="project-body">项目描述：使用CPDD2020绿牌数据集与部分CCPD2019的蓝牌数据集，上传至Roboflow进行数据标注，使用标注好的数据训练YOLOV8模型。通过图像采集设备，获取视频流，再使用视频帧通过YOLOV8模型识别并裁剪出车牌图片，再通过PanddleOCR模型识别车牌文本信息，并使用MySQL存储车牌信息，最后通过PyQt5和Thread多线程的方式实现前后端实时识别和展示车牌数据。</div>
+                </article>
+                <article class="project">
+                    <div class="project-head">
+                        <div>
+                            <div class="project-name">参赛项目：《基于U2Net的人脸肖像画智能绘画系统的设计与实现》</div>
+                            <div class="project-role">项目架构：Pytorch+SeetaFace6+U2Net</div>
+                        </div>
+                    </div>
+                    <div class="project-body">项目描述：使用SeetaFace6引擎识别人脸再通过U2Net 网络处理人脸图像，再对图像进行稀疏化处理，得到简洁肖像风格画。使用PyQt5开发出一个智能绘画系统，将生成的肖像画通过TCP/IP协议传输至EFORT工业机器人进行绘制。</div>
+                </article>
+            </section>
+
+            <div class="footer">
+                <div>陈婉婷</div>
+                <div>第 1 页 / 共 2 页</div>
+            </div>
+        </section>
+
+        <section class="page">
+            <section class="section" style="margin-top: 0;">
+                <div class="section-head">
+                    <div class="section-title">实习经历</div>
+                    <div class="section-rule"></div>
+                </div>
+                <article class="project">
+                    <div class="exp-head">
+                        <div>
+                            <div class="exp-company">福州简算科技有限公司</div>
+                            <div class="exp-title">实习岗位：Python技术支持工程师（2024.7.31-2025.7.31）</div>
+                        </div>
+                    </div>
+                </article>
+                <article class="project">
+                    <div class="project-head">
+                        <div>
+                            <div class="project-name">实习开发工具1：内存检查工具开发</div>
+                            <div class="project-role">工具架构：Streamlit+FastAPI+MySQL+Linux+分治算法</div>
+                        </div>
+                    </div>
+                    <div class="project-body">工具描述：采用Streamlit前端+FastAPI后端+MySQL数据库的技术架构，结合Linux命令与分治算法，实现对虚拟机存储空间的管理。工具通过Linux的df和awk命令观测设备磁盘占用情况；同时采用分治算法对指定目录进行扫描，通过并行计算快速定位占用空间最大的文件。运营人员可通过可视化界面查看分析结果，并选择删除特定文件释放空间，所有诊断结果和操作均实时保存至MySQL数据库。</div>
+                </article>
+                <article class="project">
+                    <div class="project-head">
+                        <div>
+                            <div class="project-name">实习开发工具2：共享存储工具</div>
+                            <div class="project-role">工具架构：Streamlit+FastAPI+MySQL+Linux+多线程</div>
+                        </div>
+                    </div>
+                    <div class="project-body">工具描述：该文件分发系统采用Streamlit前端+FastAPI后端+MySQL数据库的技术架构，结合Linux命令与多线程技术实现高效的文件部署。系统核心功能包括：通过SVN获取文件后校验MD5值确保文件完整性；对用户输入的IP地址进行合格性校验；采用多线程技术将文件快速推送至多台目标服务器；按照公司标准化流程完成文件下载、安装及安装结果验证等全流程自动化操作。</div>
+                </article>
+                <article class="project">
+                    <div class="project-head">
+                        <div>
+                            <div class="project-name">实习开发工具3：公司考勤数据分析平台</div>
+                            <div class="project-role">工具架构：html+css+js+Flask+Pandas</div>
+                        </div>
+                    </div>
+                    <div class="project-body">工具描述：主导设计并实现公司考勤数据分析平台，通过对接人事系统API获取原始考勤数据，基于Flask框架开发可视化Web应用，支持多维度统计分析（周/月/年度工作时长、缺勤趋势等），运用Pandas进行数据清洗与挖掘，生成可视化报表助力管理层决策。</div>
+                </article>
+                <article class="project">
+                    <div class="project-head">
+                        <div>
+                            <div class="project-name">实习开发接口：语音识别操作接口</div>
+                            <div class="project-role">工具架构：Lua+FastAPI</div>
+                        </div>
+                    </div>
+                    <div class="project-body">工具描述：负责编写桃心云手机上的自动化脚本，使用 Lua 脚本语言完成在不同的应用商店下载或卸载用户指定的 APP，使用FastAPI编写服务端 RESTful API 接口。</div>
+                </article>
+            </section>
+
+            <section class="section">
+                <div class="section-head">
+                    <div class="section-title">自我评价</div>
+                    <div class="section-rule"></div>
+                </div>
+                <div class="summary-box">能够使用AI工具高效地进行开发工作，如：ChatGPT-4o、Cursor、Copilot等。有着较强的沟通表达能力，对工作有上进心、认真负责，我相信我能胜任这份工作！</div>
+            </section>
+
+            <div class="footer">
+                <div>陈婉婷</div>
+                <div>第 2 页 / 共 2 页</div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
