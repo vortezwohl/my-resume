@@ -48,7 +48,8 @@
 
         .header {
             display: grid;
-            grid-template-columns: minmax(0, 1fr);
+            grid-template-columns: minmax(0, 1fr) 19mm;
+            column-gap: 6mm;
             border-bottom: 1.2px solid var(--line);
             padding-bottom: 4mm;
             margin-bottom: 4mm;
@@ -64,6 +65,7 @@
         .skills-grid { display: grid; }
 
         .name-row {
+            grid-column: 1;
             grid-template-columns: 1fr auto;
             align-items: end;
             gap: 8mm;
@@ -84,9 +86,22 @@
         }
 
         .header-meta {
+            grid-column: 1;
             grid-template-columns: 1fr;
             margin-top: 3mm;
             align-items: start;
+        }
+
+        .profile-photo {
+            grid-column: 2;
+            grid-row: 1 / span 2;
+            align-self: start;
+            width: 19mm;
+            height: 25mm;
+            border: 0.6px solid var(--soft-line);
+            border-radius: 1mm;
+            object-fit: cover;
+            object-position: center 18%;
         }
 
         .contact-grid {
@@ -265,6 +280,7 @@
                         <span><span class="label">邮箱</span><a href="mailto:1473112376@qq.com">1473112376@qq.com</a></span>
                     </div>
                 </div>
+                <img class="profile-photo" src="asset/profile-tingting.jpeg" alt="陈婉婷个人照片">
             </header>
 
             <section class="section">
@@ -351,6 +367,30 @@
 
         <section class="page">
             <section class="section" style="margin-top: 0;">
+                <div class="section-head">
+                    <div class="section-title">工作经历</div>
+                    <div class="section-rule"></div>
+                </div>
+                <article class="project">
+                    <div class="exp-head">
+                        <div>
+                            <div class="exp-company">福州畅读信息科技有限公司</div>
+                            <div class="exp-title">大模型算法工程师（NLP）</div>
+                        </div>
+                        <div class="exp-time">2025-10 至今</div>
+                    </div>
+                    <div class="exp-body">
+                        <ul class="tight-list">
+                            <li>负责机器翻译算法设计与实现，调研并部署 <span class="mono">Seed-X-PPO-7B</span>，通过“专家模型分析 → 初翻 → 多轮退火重写 → 校对”流程，实现英译西高质量输出，外籍译者校对修改率低至 <span class="emph">4.5%</span>。</li>
+                            <li>设计并开发<span class="emph">小说本地化创译系统</span>，重构传统整本直译与机翻后润色流程，采用“原文冻结 → 角色本地化 → 主线冻结 → 逐章创译 → 记忆回写”的流水线架构：先冻结原书角色与全局主线，再以“原文章节 + 冻结主线 + 正文记忆”驱动逐章生成，在保留事件顺序、对白位置、场景切换与 POV 的前提下完成深度本地化。</li>
+                            <li>在创译系统中实现结构化正文记忆层，维护 <span class="mono">storyline</span>、<span class="mono">characters</span>、<span class="mono">story_progress</span>、<span class="mono">open_loops</span>、稳定译名底座、<span class="mono">dynamic_rules</span> 时间轴与 <span class="mono">effective_views</span> 扁平视图；通过 alias / relationship / style_guard 三类动态规则按章节生效与精确关闭，持续约束人物关系、称谓体系、叙事语气和悬念推进，显著降低机翻感与 AI 味。</li>
+                            <li>围绕长链路生成任务进一步实现 <span class="emph">输入冻结 + 参数快照 + 状态重建</span> 的续跑保护机制，并以原文、人设、主线、正文记忆、译文章节等 canonical 产物作为真实状态源，支撑失败恢复、扩容续跑和多阶段排障；该系统最终重构了公司本地化翻译的人力结构，替代了大量外籍本土母语兼职译员的职能。</li>
+                        </ul>
+                    </div>
+                </article>
+            </section>
+
+            <section class="section">
                 <div class="section-head">
                     <div class="section-title">实习经历</div>
                     <div class="section-rule"></div>
