@@ -509,7 +509,7 @@
                 </div>
                 <div class="header-meta">
                     <div class="contact-grid">
-                        <span><span class="label">电话</span>13799699143</span>
+                        <span><span class="label">电话</span>+86 13799699143</span>
                         <span><span class="label">邮箱</span><a href="mailto:1473112376@qq.com">1473112376@qq.com</a></span>
                     </div>
                     <div class="link-stack">
@@ -598,10 +598,10 @@
                     </div>
                     <div class="exp-body">
                         <ul class="tight-list">
-                            <li><span class="emph">内存检查工具：</span>基于 Streamlit 前端、FastAPI 后端与 MySQL 数据库实现虚拟机存储空间管理；通过 <span class="mono">df / awk</span> 观测磁盘占用，并以分治扫描定位大文件，支持可视化分析、定向清理和诊断结果留存。</li>
-                            <li><span class="emph">共享存储工具：</span>实现文件分发自动化，通过 SVN 获取文件并校验 MD5，校验目标 IP 合法性，以多线程快速推送至多台服务器，完成下载、安装与结果验证全流程。</li>
-                            <li><span class="emph">考勤数据分析平台：</span>对接人事系统 API 获取原始考勤数据，开发支持周、月、年度工作时长与缺勤趋势等多维分析的 Web 应用；使用 Pandas 完成清洗、挖掘与可视化报表生成。</li>
-                            <li><span class="emph">语音识别操作接口：</span>编写桃心云手机自动化脚本，使用 Lua 在不同应用商店下载或卸载指定 APP，并通过 FastAPI 提供服务端 RESTful API 接口。</li>
+                            <li>面向虚拟机磁盘空间治理开发<span class="emph">内存检查工具</span>，以 <span class="mono">Streamlit + FastAPI + MySQL</span> 搭建“监测、定位、清理、留存”闭环；调用 <span class="mono">df / awk</span> 获取磁盘利用率，并采用分治扫描定位大文件，支持可视化分析、定向清理与诊断记录追溯。</li>
+                            <li>开发跨服务器<span class="emph">共享存储与文件分发工具</span>，通过 SVN 获取待分发文件并执行 MD5 完整性校验；增加目标 IP 合法性校验与多线程推送机制，覆盖下载、安装、分发结果验证等自动化流程。</li>
+                            <li>对接人事系统 API 构建<span class="emph">考勤数据分析平台</span>，使用 Pandas 清洗、聚合原始记录，支持按周、月、年度分析工时、缺勤及趋势变化，并输出可视化报表辅助管理决策。</li>
+                            <li>开发<span class="emph">云手机语音识别操作服务</span>，使用 Lua 编写多应用商店的下载安装自动化脚本，并通过 FastAPI 封装 RESTful 接口，供上层系统按任务调用和管理执行结果。</li>
                         </ul>
                     </div>
                 </article>
